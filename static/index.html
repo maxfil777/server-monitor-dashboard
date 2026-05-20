@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Server Monitor</title>
+<link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+<div class="container">
+  <header class="header">
+    <h1>Server Monitor</h1>
+    <span class="update-time">Last: <span id="updatedAt">—</span></span>
+  </header>
+
+  <div class="cards">
+    <div class="card card--cpu">
+      <div class="card__label">CPU</div>
+      <div class="card__value" id="cpuValue">—</div>
+    </div>
+    <div class="card card--mem">
+      <div class="card__label">RAM</div>
+      <div class="card__value" id="memValue">—</div>
+    </div>
+    <div class="card card--fpm">
+      <div class="card__label">FPM Active</div>
+      <div class="card__value" id="fpmValue">—</div>
+    </div>
+    <div class="card card--fpm-err">
+      <div class="card__label">FPM Errors</div>
+      <div class="card__value" id="fpmErrValue">—</div>
+    </div>
+  </div>
+
+  <div class="period-bar">
+    <span class="period-label">Period:</span>
+    <button class="period-btn" data-hours="1" onclick="setPeriod(1)">1h</button>
+    <button class="period-btn" data-hours="6" onclick="setPeriod(6)">6h</button>
+    <button class="period-btn active" data-hours="24" onclick="setPeriod(24)">24h</button>
+    <button class="period-btn" data-hours="168" onclick="setPeriod(168)">7d</button>
+    <button class="period-btn" data-hours="720" onclick="setPeriod(720)">30d</button>
+  </div>
+
+  <div class="charts">
+    <div class="chart-box">
+      <h2 class="chart-title">CPU %</h2>
+      <div class="chart-wrap"><canvas id="cpuChart"></canvas></div>
+    </div>
+    <div class="chart-box">
+      <h2 class="chart-title">RAM %</h2>
+      <div class="chart-wrap"><canvas id="memChart"></canvas></div>
+    </div>
+    <div class="chart-box">
+      <h2 class="chart-title">FPM Active</h2>
+      <div class="chart-wrap"><canvas id="fpmChart"></canvas></div>
+    </div>
+    <div class="chart-box">
+      <h2 class="chart-title">FPM Status Errors</h2>
+      <div class="chart-wrap"><canvas id="fpmErrChart"></canvas></div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+<script src="static/app.js"></script>
+</body>
+</html>

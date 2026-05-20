@@ -1,0 +1,15 @@
+[Unit]
+Description=Server Monitor Dashboard
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/server-monitor-dashboard
+ExecStart=/opt/server-monitor-dashboard/server-monitor-dashboard
+Restart=always
+RestartSec=5
+User=deploy1
+Group=deploy1
+
+[Install]
+WantedBy=multi-user.target

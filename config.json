@@ -1,0 +1,7 @@
+{
+  "listen_addr": "127.0.0.1:8090",
+  "metrics_url": "http://192.0.2.1/server-load-pro/json.json",
+  "poll_interval_seconds": 60,
+  "retention_days": 30,
+  "database_path": "./metrics.db"
+}

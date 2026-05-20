@@ -1,0 +1,43 @@
+# SSH / deploy keys
+deploy_key
+deploy_key.pub
+*.pem
+*.key
+id_rsa
+id_rsa.pub
+id_ed25519
+id_ed25519.pub
+known_hosts
+
+# Secrets / env
+.env
+.env.*
+config.local.json
+secrets.json
+
+# Build artifacts
+server-monitor-dashboard
+*.exe
+*.bin
+
+# Database / runtime
+*.db
+*.sqlite
+*.sqlite3
+metrics.db
+*.db-shm
+*.db-wal
+
+# Logs
+*.log
+logs/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db

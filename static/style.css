@@ -1,0 +1,157 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #0f0f1a;
+  color: #c0c0d0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px 16px 40px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.header h1 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #e0e0f0;
+  letter-spacing: 0.3px;
+}
+
+.update-time {
+  font-size: 12px;
+  color: #70708a;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.card {
+  background: #1a1a2e;
+  border-radius: 10px;
+  padding: 18px 16px;
+  border: 1px solid #2a2a3e;
+  transition: border-color 0.2s;
+}
+
+.card--cpu { border-left: 3px solid #4fc3f7; }
+.card--mem { border-left: 3px solid #81c784; }
+.card--fpm { border-left: 3px solid #ffb74d; }
+.card--fpm-err { border-left: 3px solid #ce93d8; }
+
+.card__label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #70708a;
+  margin-bottom: 6px;
+}
+
+.card__value {
+  font-size: 28px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.card--cpu .card__value { color: #4fc3f7; }
+.card--mem .card__value { color: #81c784; }
+.card--fpm .card__value { color: #ffb74d; }
+.card--fpm-err .card__value { color: #ce93d8; }
+
+.period-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.period-label {
+  font-size: 12px;
+  color: #70708a;
+  margin-right: 4px;
+}
+
+.period-btn {
+  background: #1a1a2e;
+  color: #80809a;
+  border: 1px solid #2a2a3e;
+  border-radius: 6px;
+  padding: 6px 14px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.period-btn:hover {
+  background: #2a2a3e;
+  color: #c0c0d0;
+}
+
+.period-btn.active {
+  background: #4fc3f7;
+  color: #0f0f1a;
+  border-color: #4fc3f7;
+  font-weight: 600;
+}
+
+.charts {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.chart-box {
+  background: #1a1a2e;
+  border-radius: 10px;
+  padding: 16px;
+  border: 1px solid #2a2a3e;
+}
+
+.chart-title {
+  font-size: 13px;
+  font-weight: 500;
+  color: #9090aa;
+  margin-bottom: 10px;
+}
+
+.chart-wrap {
+  position: relative;
+  height: 180px;
+}
+
+@media (max-width: 640px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .chart-wrap {
+    height: 140px;
+  }
+  .header h1 {
+    font-size: 17px;
+  }
+  .card__value {
+    font-size: 22px;
+  }
+}
